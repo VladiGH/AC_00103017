@@ -1,25 +1,28 @@
-    org 100h;promedio de primer parcial :2.2    CARNET: 103017 TOMAR EN CUENTA: 03017
+    	org 100h;promedio de primer parcial :2.2    CARNET: 103017 TOMAR EN CUENTA: 03017
 
 
 section     .text
-        mov     AL, 0d
-        mov     BL, 3d
-        ADD     AL, BL
+;---------------TAREA 1----------------------------------------------------
+        mov     AX, 0d
+        mov     BX, 3d
+        ADD     AX, BX ;AX = 3
 
-        mov     BL, 0d
-        ADD     AL, BL
+        mov     BX, 0d
+        ADD     AX, BX ;AX =3 
 
-        mov     BL, 1d
-        ADD     AL, BL
+        mov     BX, 1d
+        ADD     AX, BX ; AX = 4
 
-        mov     BL, 7d
-        ADD     AL, BL
+        mov     BX, 7d
+        ADD     AX, BX ; AX = 11
         
-        mov     [20Dh], AL ;hasta el momento se hace toda la suma y se guarda en [20Dh] solo para 
-                            ; saber que ahí estará temporalmente
-        mov     AX, [20Dh]  ;se guarda en el registro acumulador AX
-        ;DIV     5d
+	mov 	DX, 0000h; limpiando dx
+	mov 	BX, 5h ;guardando el el divior
+	div	BX	; cociente queda en ax = 2 y residuo queda en DX = 1
 
+	mov 	[210h], DX ;guardando temporalmente el residuo
+	mov	[211h], AX ;guardando temporalmente el cociente
+;---------------------------------------------------------------------------------------
         mov     di, 0d
         mov     cx, [len]
 
