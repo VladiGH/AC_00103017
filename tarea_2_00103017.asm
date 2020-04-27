@@ -9,7 +9,7 @@ section     .text
 	mov	CX, 2d; BX tendrá el valor de 2
 	mul 	CX
 	mov	[210h], ax
-	mov 	BX, 0000h
+	mov 	BX, 0000h ;limpiando bx
 
 frstWhile:	inc bx
 	mul cx
@@ -26,8 +26,32 @@ scndWhile:	inc bx
 
 ;---------------TAREA 3----------------------------------------------------
 ;FIBONACCI
+	mov 	dx, 0000h ;limpiando dx
+	mov 	cx, 0000h; limpiando cx
+	mov 	bx, 0000h ;limpiando bx
+	mov 	ax, 0000h; limpiando ax
 
+	mov 	ax, 0d
+	mov 	dx, 1h
 
+	mov 	[220h], ax
+	mov 	[221h], dx
+
+	mov     bx, 1h;empezando bx en 1
+
+frstWhile2:	
+    	inc     bx
+    	mov 	ax, 0000h; limpiando ax
+	mov 	cx, 0000h; limpiando cx
+    
+   	mov     ax, [220h+BX-1h]
+	mov     cx, [220h+BX-2h] 
+	add     ax, cx
+    
+	mov [220h + bx], AX
+    
+	cmp bx, 0xe; si es menor que 255 hexa
+	jb frstWhile2
 
 
 ;---------------TAREA 1----------------------------------------------------
