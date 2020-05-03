@@ -2,6 +2,39 @@
 
 
 section     .text
+
+;---------------TAREA 1----------------------------------------------------
+		mov 	AX, 0000h ;limpiando AX
+		mov	BX, 0000h ;limpiando BX
+        mov     AX, 0d
+        mov     BX, 3d
+        ADD     AX, BX ;AX = 3
+
+        mov     BX, 0d
+        ADD     AX, BX ;AX =3 
+
+        mov     BX, 1d
+        ADD     AX, BX ; AX = 4
+
+        mov     BX, 7d
+        ADD     AX, BX ; AX = 11
+        
+		mov 	DX, 0000h; limpiando dx
+		mov 	BX, 5h ;guardando el el divior
+		div	BX	; cociente queda en ax = 2 y residuo queda en DX = 1
+
+		mov 	[230h], DX ;guardando temporalmente el residuo
+		mov		[231h], AX ;guardando temporalmente el cociente
+
+        mov     di, 0d
+        mov     cx, [len]
+
+lupi:   mov     bl, [comnt+di]
+        mov     [di+200h], bl
+        inc     di
+		cmp 	di, 14d
+        jb      lupi
+;---------------------------------------------------------------------------------
 ;---------------TAREA 2----------------------------------------------------
 	mov 	DX, 0000h ;limpiando dx
 	mov 	CX, 0000h; limpiando cx
@@ -40,8 +73,8 @@ scndWhile:	inc bx
 	mov     bx, 1h;empezando bx en 1
 
 frstWhile2:	
-    	inc     bx
-    	mov 	ax, 0000h; limpiando ax
+    inc     bx
+    mov 	ax, 0000h; limpiando ax
 	mov 	cx, 0000h; limpiando cx
     
    	mov     ax, [220h+BX-1h]
@@ -53,38 +86,6 @@ frstWhile2:
 	cmp bx, 0xe; si es menor que 255 hexa
 	jb frstWhile2
 
-
-;---------------TAREA 1----------------------------------------------------
-	mov 	AX, 0000h ;limpiando AX
-	mov	BX, 0000h ;limpiando BX
-        mov     AX, 0d
-        mov     BX, 3d
-        ADD     AX, BX ;AX = 3
-
-        mov     BX, 0d
-        ADD     AX, BX ;AX =3 
-
-        mov     BX, 1d
-        ADD     AX, BX ; AX = 4
-
-        mov     BX, 7d
-        ADD     AX, BX ; AX = 11
-        
-	mov 	DX, 0000h; limpiando dx
-	mov 	BX, 5h ;guardando el el divior
-	div	BX	; cociente queda en ax = 2 y residuo queda en DX = 1
-
-	mov 	[230h], DX ;guardando temporalmente el residuo
-	mov	[231h], AX ;guardando temporalmente el cociente
-
-        mov     di, 0d
-        mov     cx, [len]
-
-lupi:   mov     bl, [comnt+di]
-        mov     [di+200h], bl
-        inc     di
-        loop    lupi
-;---------------------------------------------------------------------------------
     int 20h
 
 section     .data
