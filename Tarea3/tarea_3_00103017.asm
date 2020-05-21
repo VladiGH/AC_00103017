@@ -98,5 +98,5 @@ len2    equ     $-msg2+14d
 msg3    db      "Atte. El bizcochito"
 len3    equ     $-msg3+9d
 
-msg4    db      "Viva Canada"
+msg4    db      "PD.Viva Canada"
 len4    equ     $-msg4+25d
