@@ -4,8 +4,8 @@
 section     .text
 
 ;---------------TAREA 1----------------------------------------------------
-		mov 	AX, 0000h ;limpiando AX
-		mov		BX, 0000h ;limpiando BX
+	mov 	AX, 0000h ;limpiando AX
+	mov	BX, 0000h ;limpiando BX
         mov     AX, 0d
         mov     BX, 3d
         ADD     AX, BX ;AX = 3
@@ -19,12 +19,12 @@ section     .text
         mov     BX, 7d
         ADD     AX, BX ; AX = 11
         
-		mov 	DX, 0000h; limpiando dx
-		mov 	BX, 5h ;guardando el el divior
-		div		BX	; cociente queda en ax = 2 y residuo queda en DX = 1
+	mov 	DX, 0000h; limpiando dx
+	mov 	BX, 5h ;guardando el el divior
+	div	BX	; cociente queda en ax = 2 y residuo queda en DX = 1
 
-		mov 	[230h], DX ;guardando temporalmente el residuo
-		mov		[231h], AX ;guardando temporalmente el cociente
+	mov 	[230h], DX ;guardando temporalmente el residuo
+	mov	[231h], AX ;guardando temporalmente el cociente
 
         mov     di, 0d
         mov     cx, [len]
