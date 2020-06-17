@@ -161,37 +161,25 @@ nota10:	mov 	dx, msg10
 
 section .data
 prome	db	" Prom-> $"
-lenp	equ	$-prome
 
 bien	db	"Ingresa 5 caracteres num-> $"
-lenB	equ	$-bien
 
 msg1     db 	" Solo necesito el 0$"
-len1 	equ	    $-msg1
 
 msg2     db 	" Aun se pasa$"
-len2 	equ	    $-msg2
 
 not3     db 	" Hay salud $"
-len3 	equ	    $-not3
 
 msg4     db 	" Me recupero$"
-len4 	equ	    $-msg4
 
 msg5     db 	" En el segundo$"
-len5 	equ	    $-msg5
 
 msg6     db 	" Peor es nada$"
-len6 	equ	    $-msg6
 
 msg7     db 	" Muy bien$"
-len7	equ	    $-msg7
 
 msg8     db 	" Colocho$"
-len8 	equ	    $-msg8
 
 msg9     db 	" Siempre me esfuerzo$"
-len9 	equ	    $-msg9
 
 msg10     db 	 " Perfecto solo Dios$"
-len10 	equ	    $-msg10
