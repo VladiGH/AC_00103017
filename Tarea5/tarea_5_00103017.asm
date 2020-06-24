@@ -19,9 +19,9 @@ section .text
 	mov 	di, 25d ; Y -> Fila
 	call 	linea_h3
 
-	;mov	si, 25d ; X -> Columna
-	;mov 	di, 25d ; Y -> Fila
-	;call 	linea_v
+	mov	si, 25d ; X -> Columna
+	mov 	di, 25d ; Y -> Fila
+	call 	linea_d
 
 	;mov	si, 75d ; X -> Columna
 	;mov 	di, 25d ; Y -> Fila
@@ -71,14 +71,14 @@ lupi_h3:mov 	cx, 0d ; Columna
 	jne 	lupi_h3
 	ret
 
-linea_v:
-lupi_v:	mov 	cx, si ; Columna 
-	mov	dx, 0d ; Fila
-	add 	dx, di
+linea_d:
+lupi_d:	mov 	cx, si ; Columna 
+	mov	dx, si ; Fila
+	;add 	dx, di
 	call 	pixel
 	inc 	di
 	cmp 	di, 75d
-	jne 	lupi_v
+	jne 	lupi_d
 	ret
 
 
